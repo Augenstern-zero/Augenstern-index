@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>页面没找到 | 404</title>
+        <link rel="icon" type="image/ico" href="https://tu.sunpma.com/imgs/2020/11/1fbea10ad3d3e5cf.webp">
+        <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.12.1/css/all.min.css">
+        <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+        <link rel="stylesheet" href="./css/404.css">
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="main">
+                        <div class="header">
+                            <img src="https://tu.sunpma.com/imgs/2020/11/1fbea10ad3d3e5cf.webp" alt="Augenstern">
+                        </div>
+
+                        <!-- 进度条 -->
+                        <div id="myProgress">
+                            <div id="myBar"></div>
+                        </div>
+
+                        <div class="content">页面没找到,404了哦~</div>
+                        <div class="gourl">
+                            <div class="newurl">客官请稍等~</div>
+                            <div class="newurl">即将返回主页！</div>
+                            <div id="newurl" class="newurl"></div>
+                        </div>
+
+                        <div class="Augenstern">
+                            <a href="javascript:void(0);" onclick="goUrl()" class="btn btn-info" role="button" id="Augenstern">立刻返回</a>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <script>
+            var newurl = "http://127.0.0.1/index/404.html"; //跳转地址
+
+            function goUrl() {
+                window.location.href = newurl;
+            }
+
+            move(); //调用进度条
+            // 进度条
+            function move() {
+                var elem = document.getElementById("myBar");
+                var width = 0;
+                var id = setInterval(frame, 50);
+
+                function frame() {
+                    if (width >= 100) {
+                        clearInterval(id);
+                        window.location.href = newurl;
+                    } else {
+                        width++;
+                        elem.style.width = width + '%';
+                    }
+                }
+            }
+        </script>
+
+        <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+        <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+
+        <!-- bootstrap.bundle.min.js 用于弹窗、提示、下拉菜单，包含了 popper.min.js -->
+        <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+
+        <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
+        <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </body>
+
+</html>
